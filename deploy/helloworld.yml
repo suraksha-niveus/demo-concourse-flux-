@@ -6,9 +6,9 @@ metadata:
   name: helloworld
   labels:
     app: helloworld
-  annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.helloworld: semver:~1.0
+#   annotations:
+#     flux.weave.works/automated: "true"
+#     flux.weave.works/tag.helloworld: semver:~1.0
 spec:
   replicas: 1
   revisionHistoryLimit: 2
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo: blue
         imagePullPolicy: Always
         ports:
         - name: web
