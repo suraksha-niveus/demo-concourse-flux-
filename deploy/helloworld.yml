@@ -41,13 +41,13 @@ spec:
     app: helloworld
   type: ClusterIP
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   namespace: demo-concourse-flux
   name: helloworld
   annotations:
-    kubernetes.io/ingress.class: traefik
+    kubernetes.io/ingress.class: nginx
 spec:
   rules:
   - host: demo-concourse-flux.particule.io
@@ -57,7 +57,23 @@ spec:
           serviceName: helloworld-svc
           servicePort: 80
 
-
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: rollouts-ingress
+#   annotations:
+#     kubernetes.io/ingress.class: nginx
+# spec:
+#   rules:
+#   - http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: rollouts-demo
+#             port:
+#               number: 80
 # ---
 # apiVersion: apps/v1
 # kind: Deployment
