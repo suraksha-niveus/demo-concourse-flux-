@@ -8,7 +8,7 @@ metadata:
     app: helloworld
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.helloworld: semver:~1.0
+    flux.weave.works/tag.helloworld: semver:~2.0
 spec:
   replicas: 1
   revisionHistoryLimit: 2
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: particule/demo-concourse-flux:1.0.7
+        image: particule/demo-concourse-flux:2.0.7
         imagePullPolicy: Always
         ports:
         - name: web
@@ -78,7 +78,7 @@ spec:
 #     spec:
 #       containers:
 #       - name: colorapi
-#         image: particule/simplecolorapi:1.0
+#         image: particule/simplecolorapi:2.0
 #         imagePullPolicy: Always
 #         ports:
 #         - name: web
